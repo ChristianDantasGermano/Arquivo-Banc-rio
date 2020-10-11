@@ -1,22 +1,16 @@
 package MetodoPagamento;
 
-import java.util.Calendar;
-
-public class PagamentoCartao extends Pagamento{
+public class PagamentoCartao extends Pagamento {
 	private double numeroCartao;
 	private String nomeTitular;
+	private int parcelas;
 
-	public PagamentoCartao(String nome, String CPF, String bancoRecebimento
-		, String bancoPagamento, Calendar data,double valor, double numeroCartao
-		, String nomeTitular) {
-		this.nome = nome;
-		this.CPF = CPF;
-		this.bancoRecebimento = bancoRecebimento;
-		this.bancoPagamento = bancoPagamento;
-		this.data = data;
-		this.valor = valor;
+	public PagamentoCartao(String nome, String cPF, String bancoRecebimento, String bancoPagamento, String data,
+			double valor, double numeroCartao, String nomeTitular, int parcelas) {
+		super(nome, cPF, bancoRecebimento, bancoPagamento, data, valor);
 		this.numeroCartao = numeroCartao;
 		this.nomeTitular = nomeTitular;
+		this.parcelas = parcelas;
 	}
 
 	public double getNumeroCartao() {
@@ -26,5 +20,9 @@ public class PagamentoCartao extends Pagamento{
 	public String getNomeTitular() {
 		return nomeTitular;
 	}
-		
+
+	public int getParcelas() {
+		return parcelas;
+	}
+
 }

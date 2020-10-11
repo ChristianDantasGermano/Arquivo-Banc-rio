@@ -1,21 +1,31 @@
 package MetodoPagamento;
 
-import java.util.Calendar;
-
 public abstract class Pagamento {
 	protected String nome;
 	protected String CPF;
 	protected String bancoRecebimento;
 	protected String bancoPagamento;
-	protected Calendar data;
+	protected String data;
 	protected double valor;
-	
+
+	public Pagamento(String nome, String cPF, String bancoRecebimento, String bancoPagamento, String data,
+			double valor) {
+		this.nome = nome;
+		CPF = cPF;
+		this.bancoRecebimento = bancoRecebimento;
+		this.bancoPagamento = bancoPagamento;
+		this.data = data;
+		this.valor = valor;
+	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public String getCPF() {
 		return CPF;
 	}
+
 	public String getBancoRecebimento() {
 		return bancoRecebimento;
 	}
@@ -24,7 +34,7 @@ public abstract class Pagamento {
 		return bancoPagamento;
 	}
 
-	public Calendar getData() {
+	public String getData() {
 		return data;
 	}
 
@@ -32,7 +42,4 @@ public abstract class Pagamento {
 		return valor;
 	}
 
-
-	
-	
 }
