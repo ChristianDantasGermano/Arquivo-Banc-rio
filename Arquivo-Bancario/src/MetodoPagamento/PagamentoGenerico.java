@@ -6,9 +6,9 @@ public class PagamentoGenerico extends Pagamento {
 	private String nomeTitular;
 	private int parcelas;
 
-	public PagamentoGenerico(String nome, String cPF, String bancoRecebimento, String bancoPagamento, String data,
+	public PagamentoGenerico(String nome, String CPF, String bancoRecebimento, String bancoPagamento, String data,
 			double valor, double numeroBoleto, double numeroCartao, String nomeTitular, int parcelas) {
-		super(nome, cPF, bancoRecebimento, bancoPagamento, data, valor);
+		super(nome, CPF, bancoRecebimento, bancoPagamento, data, valor);
 		this.numeroBoleto = numeroBoleto;
 		this.numeroCartao = numeroCartao;
 		this.nomeTitular = nomeTitular;
@@ -29,18 +29,5 @@ public class PagamentoGenerico extends Pagamento {
 
 	public int getParcelas() {
 		return parcelas;
-	}
-
-	public void Imprime() {
-		System.out.println(nome);
-		System.out.println(CPF);
-		System.out.println(bancoPagamento);
-		System.out.println(bancoRecebimento);
-		System.out.println(data);
-		System.out.println(valor);
-		System.out.println(numeroBoleto);
-		System.out.println(numeroCartao);
-		System.out.println(nomeTitular);
-		System.out.println(parcelas);
 	}
 }

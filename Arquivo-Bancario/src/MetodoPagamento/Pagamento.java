@@ -8,10 +8,10 @@ public abstract class Pagamento {
 	protected String data;
 	protected double valor;
 
-	public Pagamento(String nome, String cPF, String bancoRecebimento, String bancoPagamento, String data,
+	public Pagamento(String nome, String CPF, String bancoRecebimento, String bancoPagamento, String data,
 			double valor) {
 		this.nome = nome;
-		CPF = cPF;
+		this.CPF = CPF;
 		this.bancoRecebimento = bancoRecebimento;
 		this.bancoPagamento = bancoPagamento;
 		this.data = data;
@@ -40,6 +40,15 @@ public abstract class Pagamento {
 
 	public double getValor() {
 		return valor;
+	}
+
+	public void Imprimir() {
+		System.out.println("Nome: " + nome);
+		System.out.println("CPF: " + CPF);
+		System.out.println("Banco Recebimento:" + bancoRecebimento);
+		System.out.println("Banco Pagamento: " + bancoPagamento);
+		System.out.println("Data: " + data);
+		System.out.println("Valor: " + valor);
 	}
 
 }

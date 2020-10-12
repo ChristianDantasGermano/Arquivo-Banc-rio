@@ -1,11 +1,18 @@
 package Validacao;
 
-public class ValidarCPF implements Validar{
+import br.com.caelum.stella.validation.CPFValidator;
+
+public class ValidarCPF implements Validar {
 
 	@Override
-	public boolean ValidarValor(double valor) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean Valida(String valor) {
+		CPFValidator cpfValidator = new CPFValidator();
+		try {
+			cpfValidator.assertValid(valor);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 }

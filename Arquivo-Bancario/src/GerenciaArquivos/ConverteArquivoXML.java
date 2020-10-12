@@ -12,20 +12,18 @@ public class ConverteArquivoXML extends ConverteArquivo {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public ArrayList<PagamentoGenerico> LerArquivo() {
-		ArrayList<PagamentoGenerico> pagamento = null;
+	public void LerArquivo() {
 		try {
 			FileReader reader = new FileReader("remessa.xml");
 			XStream xstream = new XStream(new DomDriver());
 			xstream.alias("br.com.pageseguro.RemessaCartaoCredito", PagamentoGenerico.class);
 			xstream.alias("br.com.pageseguro.RemessaCartaoDebito", PagamentoGenerico.class);
 			xstream.alias("br.com.pageseguro.RemessaBoleto", PagamentoGenerico.class);
-			pagamento = (ArrayList<PagamentoGenerico>) xstream.fromXML(reader);
-
+			ArrayList<PagamentoGenerico> pagamento = (ArrayList<PagamentoGenerico>) xstream.fromXML(reader);
+			OrganizaPagamento(pagamento);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		return pagamento;
 	}
 
 }
